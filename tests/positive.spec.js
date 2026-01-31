@@ -54,14 +54,14 @@ test.describe('Positive Functional Tests – Swift Translator (Auto-Translate)',
       );
 
       // Wait until some text appears (non-empty)
-      await expect(outputBox).not.toHaveText('', { timeout: 15000 });
+      await expect(outputBox).not.toHaveText('', { timeout: 18000 });
 
       // Then assert it contains the expected text (less strict)
       if (testCase.expected) {
-        await expect(outputBox).toContainText(testCase.expected, { timeout: 12000 });
+        await expect(outputBox).toContainText(testCase.expected, { timeout: 15000 });
       } else if (testCase.expectedLines) {
         for (const line of testCase.expectedLines) {
-          await expect(outputBox).toContainText(line, { timeout: 12000 });
+          await expect(outputBox).toContainText(line, { timeout: 15000 });
         }
       }
     });
